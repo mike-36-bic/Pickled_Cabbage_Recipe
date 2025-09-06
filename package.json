@@ -1,16 +1,15 @@
-kk{
+{
   "name": "the-compost-project",
   "version": "1.0.0",
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^5.1.0",
-    "three": "^0.128.0",
-    "web3": "^1.8.0"
+    "three": "^0.128.0"
   },
   "devDependencies": {
+    "gh-pages": "^5.0.0",
     "javascript-obfuscator": "^4.0.0"
   },
   "scripts": {
-    "build": "mkdir -p dist && npx javascript-obfuscator ./the-compost.js --compact false --control-flow-flattening true --control-flow-flattening-threshold 1 --string-array true --string-array-encoding 'base64' --string-array-threshold 1 --identifier-names-generator 'mangled' --rename-globals true --output dist/the-compost.js && cp index.html dist/ && cp three.min.js dist/ && cp extension-index.html dist/ && cp manifest.json dist/"
+    "build": "mkdir -p dist && npx javascript-obfuscator ./the-compost.js --compact false --control-flow-flattening true --control-flow-flattening-threshold 1 --string-array true --string-array-encoding 'base64' --string-array-threshold 1 --identifier-names-generator 'mangled' --rename-globals true --output dist/the-compost.js && cp index.html dist/ && cp three.min.js dist/",
+    "deploy": "gh-pages -d dist"
   }
 }

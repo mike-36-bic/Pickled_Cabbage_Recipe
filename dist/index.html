@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabbage Portal Payment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c;
+            color: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 500px;
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+
+    <div class="container bg-gray-800 p-8 md:p-12 rounded-2xl shadow-2xl w-full transform transition-all duration-500 hover:scale-105">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-white text-center mb-4">
+            The Compost Project
+        </h1>
+        <h2 class="text-xl text-gray-300 text-center mb-6">
+            Creative Processing Fee: $1.50
+        </h2>
+        <p class="text-gray-400 text-center mb-8">
+            This one-time fee provides you with a single-use download link to the complete Chrome extension project.
+        </p>
+
+        <!-- Zelle/PayPal Option -->
+        <div class="text-center mt-8">
+            <p class="text-sm text-gray-400 mb-4">
+                To continue, please send a $1.50 payment via Zelle or PayPal.
+            </p>
+            <div class="flex flex-col items-center space-y-4">
+                <div class="w-full p-4 rounded-md bg-gray-700 text-white shadow-lg text-center">
+                    <p class="font-semibold text-gray-300 mb-2">PayPal</p>
+                    <p class="text-sm font-light">
+                        Send to: <strong>mike-36-bic@example.com</strong>
+                    </p>
+                </div>
+                <div class="w-full p-4 rounded-md bg-gray-700 text-white shadow-lg text-center">
+                    <p class="font-semibold text-gray-300 mb-2">Zelle</p>
+                    <p class="text-sm font-light">
+                        Send to: <strong>555-555-5555</strong>
+                    </p>
+                </div>
+            </div>
+            <p class="text-sm text-gray-400 mt-6">
+                After making your payment, please email a confirmation screenshot to
+                <a href="mailto:mike-36-bic@example.com" class="text-green-500 hover:underline">mike-36-bic@example.com</a>.
+                You will receive your secure download link shortly.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

@@ -3,82 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pickled Beet Entries</title>
-
-  <!-- ✅ Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            beet: '#6e1e2a',
-          },
-        },
-      },
+  <title>Payment & Contact Portal</title>
+  <style>
+    * {
+      box-sizing: border-box;
     }
-  </script>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      background-color: #4A90E2;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      width: 100%;
+    }
+    main {
+      padding: 2rem;
+      width: 100%;
+      max-width: 600px;
+    }
+    section {
+      margin-bottom: 2rem;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h2 {
+      margin-top: 0;
+      color: #4A90E2;
+    }
+    .button {
+      display: inline-block;
+      background-color: #0070ba;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+    .note {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .qr-image {
+      display: block;
+      margin: 1rem auto;
+      max-width: 200px;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #777;
+      width: 100%;
+    }
+  </style>
 </head>
-<body class="bg-beet text-white min-h-screen p-6">
+<body>
+  <header>
+    <h1>Support & Contact</h1>
+    <p>Secure payment and professional connection</p>
+  </header>
 
-  <main class="max-w-3xl mx-auto bg-white text-beet rounded-lg shadow-lg p-8">
-    <h1 class="text-3xl font-bold mb-6">Confirm Your Entry</h1>
-
-    <!-- ✅ Tailwind Confirmation Block -->
-    <div class="bg-beet text-white p-4 rounded mb-6">
-      ✅ Tailwind is rendering correctly.
-    </div>
-
-    <!-- ✅ Zelle Confirmation -->
-    <section class="mb-8">
-      <h2 class="text-xl font-semibold mb-2">Zelle Confirmation</h2>
-      <input type="text" placeholder="Zelle Transaction ID" class="w-full p-2 border rounded mb-2" />
-      <button class="px-4 py-2 bg-beet text-white rounded hover:bg-red-700">Confirm Zelle</button>
-
-      <!-- Zelle QR Code Placeholder -->
-      <div class="mt-4">
-        <p class="text-sm">Send via Zelle to: <strong>your@email.com</strong></p>
-        <a href="mailto:your@email.com" class="text-blue-600 underline">Open Email App</a>
-        <div class="mt-2">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?data=mailto:your@email.com&size=150x150" alt="Zelle QR Code" class="w-36 h-36" />
-        </div>
-      </div>
-    </section>
-
-    <!-- ✅ PayPal Confirmation -->
-    <section class="mb-8">
-      <h2 class="text-xl font-semibold mb-2">PayPal Confirmation</h2>
-      <input type="text" placeholder="PayPal Transaction ID" class="w-full p-2 border rounded mb-2" />
-      <button class="px-4 py-2 bg-beet text-white rounded hover:bg-red-700">Confirm PayPal</button>
-
-      <!-- PayPal QR Code Placeholder -->
-      <div class="mt-4">
-        <p class="text-sm">Donate via PayPal:</p>
-        <a href="https://paypal.me/yourusername" target="_blank" class="text-blue-600 underline">Go to PayPal</a>
-        <div class="mt-2">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://paypal.me/yourusername&size=150x150" alt="PayPal QR Code" class="w-36 h-36" />
-        </div>
-      </div>
-    </section>
-
-    <!-- ✅ Final Confirmation -->
-    <section class="mb-8">
-      <h2 class="text-xl font-semibold mb-2">Finalize Entry</h2>
-      <button class="px-6 py-3 bg-green-600 text-white rounded hover:bg-green-700">Submit Entry</button>
-    </section>
-
-    <!-- ✅ Resource Links -->
+  <main>
     <section>
-      <h2 class="text-xl font-semibold mb-2">Resources</h2>
-      <ul class="list-disc pl-5 text-blue-600">
-        <li><a href="./dist/the-compost.js" class="hover:underline">View JS Logic</a></li>
-        <li><a href="./dist/three.min.js" class="hover:underline">Three.js Library</a></li>
-        <li><a href="./dist/your-asset.zip" class="hover:underline">Download Entry Package</a></li>
-      </ul>
+      <h2>PayPal Payment</h2>
+      <p>You can make a secure payment via PayPal using the button below.</p>
+      <a href="https://www.paypal.me/shaggyshane" class="button" target="_blank">Pay with PayPal</a>
+      <p class="note">
+        After payment, you’ll receive a confirmation directly from PayPal.<br>
+        If you need a formal receipt, please email <strong>shanesoper@gmail.com</strong>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Connect on LinkedIn</h2>
+      <p>Scan the QR code below to connect professionally:</p>
+      <img src="linkedin-qr.png" alt="LinkedIn QR Code" class="qr-image" />
     </section>
   </main>
 
-  <!-- ✅ JS Script -->
-  <script src="./dist/the-compost.js"></script>
+  <footer>
+    &copy; 2025 Shane Soper. All rights reserved.
+  </footer>
 </body>
 </html>

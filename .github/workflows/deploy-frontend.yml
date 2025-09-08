@@ -1,24 +1,29 @@
-name: CI/CD Pipeline for Public Website
+name: Deploy Frontend to GitHub Pages
 
 on:
   push:
     branches:
-      - final-release
+      - main
+      - release/*
+  workflow_dispatch:
 
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false  # Ensures PAT is used instead of default GITHUB_TOKEN
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '14'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci  # Faster and more reliable than npm install for CI
 
       - name: Build and Obfuscate Frontend Files
         run: npm run build
@@ -26,7 +31,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.DEPLOY_TOKEN }}
+          github_token: ${{ secrets.GH_PAT_RAD_DASH }}  # Use your securely stored PAT
           publish_dir: ./dist
           publish_branch: gh-pages
-

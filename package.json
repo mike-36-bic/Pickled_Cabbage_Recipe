@@ -1,1 +1,26 @@
-{"name":"pickled_beet_entries","version":"1.0.0","description":"A web automation project boilerplate.","main":"dist/index.html","scripts":{"test":"echo \"Error: no test specified\" && exit 1","lint": "jsonlint -q package.json","build":"mkdir -p dist && terser src/main.js -o dist/main.min.js -c -m && cp src/index.html dist/index.html && cp src/*.png dist/"},"dependencies":{"three":"^0.180.0"},"devDependencies":{"@eslint/js":"^9.35.0","eslint":"^9.35.0","globals":"^16.3.0","jsonlint":"^1.6.3","terser":"^5.30.0"},"repository":{"type":"git","url":"git+https://github.com/mike-36-bic/Pickled_Beet_Entries.git"},"keywords":[],"author":"Shane Soper","license":"ISC","type":"commonjs","bugs":{"url":"https://github.com/mike-36-bic/Pickled_Beet_Entries/issues"},"homepage":"https://github.com/mike-36-bic/Pickled_Beet_Entries#readme"}
+{
+  "name": "pickled_beet_entries",
+  "version": "1.0.0",
+  "description": "Your project description here",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "lint": "eslint src/**/*.js",
+    "build": "terser src/index.js -o dist/index.min.js",
+    "test": "echo \"No tests yet\""
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "dependencies": {
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.35.0",
+    "eslint": "^9.35.0",
+    "globals": "^16.3.0",
+    "jsonlint": "^1.6.3",
+    "terser": "^5.30.0"
+  },
+  "license": "ISC"
+}

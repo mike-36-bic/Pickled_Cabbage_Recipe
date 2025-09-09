@@ -1,6 +1,32 @@
+# Node modules
 node_modules/
+
+# Build output
 dist/
-.cache/
+
+# Legacy logic
+legacy/
+
+# Logs
 *.log
+npm-debug.log*
+
+# System files
 .DS_Store
+Thumbs.db
+
+# Editor configs
+.vscode/
+.idea/
+*.swp
+
+# Environment files (if ever added)
 .env
+.env.local
+.env.*.local
+
+# Secret files (if manually used)
+secrets.json
+token.txt
+*.key
+*.pem

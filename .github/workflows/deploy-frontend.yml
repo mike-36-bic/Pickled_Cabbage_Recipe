@@ -15,15 +15,22 @@ jobs:
       - name: ⬇️ Checkout repository
         uses: actions/checkout@v3
         with:
-          persist-credentials: false  # Ensures PAT is used instead of default GITHUB_TOKEN
+          persist-credentials: false
 
       - name: 🛠 Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '14'
 
+      - name: 🧹 Validate Legacy Exclusion
+        run: |
+          if git diff --name-only HEAD~1 HEAD | grep -q '^legacy/'; then
+            echo "::warning::Changes detected in legacy/. Skipping build."
+            exit 0
+          fi
+
       - name: 📦 Install dependencies
-        run: npm ci  # Faster and more reliable than npm install for CI
+        run: npm ci
 
       - name: 🧱 Build and Obfuscate Frontend Files
         run: npm run build
@@ -31,6 +38,6 @@ jobs:
       - name: 🚚 Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GH_PAT_RAD_DASH }}  # Use your securely stored PAT
+          github_token: ${{ secrets.GH_PAT_RAD_DASH }}
           publish_dir: ./dist
           publish_branch: gh-pages

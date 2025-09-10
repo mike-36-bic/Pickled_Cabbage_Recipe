@@ -1,13 +1,13 @@
 {
   "name": "rad-dash",
   "version": "1.0.0",
-  "description": "Static frontend for secure payment and professional contact",
+  "description": "Static frontend for secure payment and QR-based identity handoff",
   "scripts": {
-    "build": "npx html-minifier-terser src/index.html --collapse-whitespace --remove-comments --remove-optional-tags --minify-css true --minify-js true -o dist/index.html",
+    "clean": "rm -rf dist && mkdir -p dist",
+    "build": "npx html-minifier-terser src/index.html -o dist/index.html",
     "copy-assets": "cp src/*.png dist/",
     "serve": "npx serve dist",
-    "clean": "rm -rf dist/* && mkdir -p dist",
-    "deploy": "npm run clean && npm run build && npm run copy-assets && npm run serve"
+    "deploy": "npm run clean && npm run build && npm run copy-assets"
   },
   "devDependencies": {
     "html-minifier-terser": "^7.2.0",
